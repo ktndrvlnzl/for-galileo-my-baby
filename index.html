@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Galileo</title>
+
+  <!-- Two fonts: Fraunces for the big personality headlines, Work Sans for everything else -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ================= PASSCODE GATE ================= -->
+  <!-- This whole screen sits on top of everything until the correct code is typed. -->
+  <div id="gate">
+    <div class="gate-petals" aria-hidden="true"></div>
+
+    <div class="gate-card">
+      <h1 class="gate-title">Wait... who are you? <span class="wobble">👀</span></h1>
+      <p class="gate-subtitle">Galileo access required.</p>
+
+      <!-- 4 separate boxes so it feels like a real passcode lock -->
+      <div class="passcode-boxes" id="passcodeBoxes">
+        <input type="tel" inputmode="numeric" maxlength="1" class="digit" data-index="0" autocomplete="off" />
+        <input type="tel" inputmode="numeric" maxlength="1" class="digit" data-index="1" autocomplete="off" />
+        <input type="tel" inputmode="numeric" maxlength="1" class="digit" data-index="2" autocomplete="off" />
+        <input type="tel" inputmode="numeric" maxlength="1" class="digit" data-index="3" autocomplete="off" />
+      </div>
+
+      <p class="gate-feedback" id="gateFeedback">&nbsp;</p>
+      <p class="gate-hint">hint: it's a date you should know by heart — MMDD 🎂</p>
+    </div>
+  </div>
+
+  <!-- ================= UNLOCK TRANSITION ================= -->
+  <!-- A short curtain that sweeps away once the code is correct -->
+  <div id="unlockCurtain" aria-hidden="true">
+    <span class="unlock-text">opening...</span>
+  </div>
+
+  <!-- ================= MAIN SITE ================= -->
+  <!-- Hidden until unlocked, then revealed -->
+  <main id="site" hidden>
+
+    <!-- ---------- HERO ---------- -->
+    <section class="section hero" id="hero">
+      <div class="floating-decor" aria-hidden="true"></div>
+      <p class="hero-kicker">okay you're in. hi.</p>
+      <h1 class="hero-title">GALILEO<span class="dot">.</span></h1>
+      <p class="hero-sub">yes, you. don't act confused.</p>
+      <button class="btn btn-primary" id="scrollToApology">Okay... what is this? →</button>
+    </section>
+
+    <!-- ---------- APOLOGY ---------- -->
+    <section class="section apology" id="apology">
+      <div class="reveal-group">
+        <h2 class="section-title">Okay, I owe you an apology.</h2>
+        <p class="reveal-line">My birthday happened. You weren't there. I know.</p>
+        <p class="reveal-line">Not because I forgot about you — I just knew how packed your schedule already is, and I got weirdly shy about adding one more thing to it.</p>
+        <p class="reveal-line">So I said nothing, which, in hindsight, was not my best move.</p>
+        <p class="reveal-line">I couldn't just leave it there though. So instead of a text that starts with "sorry for the late reply," you get... this whole thing.</p>
+      </div>
+    </section>
+
+    <!-- ---------- APPRECIATION ---------- -->
+    <section class="section appreciation" id="appreciation">
+      <h2 class="section-title">But here's the thing.</h2>
+      <ul class="stack-list" id="stackList">
+        <li class="stack-item">You're one of my favorite people to argue with.</li>
+        <li class="stack-item">You somehow make debating fun. That should not be possible.</li>
+        <li class="stack-item">You're ridiculously good at speaking, and everyone in the room knows it.</li>
+        <li class="stack-item">You've got a personality that makes people notice you before you even say anything.</li>
+        <li class="stack-item">And unfortunately for you, you're stuck with me anyway.</li>
+      </ul>
+    </section>
+
+    <!-- ---------- GALILEO-CODED ---------- -->
+    <section class="section coded" id="coded">
+      <h2 class="section-title">Things that are very Galileo-coded</h2>
+      <p class="section-hint">tap one.</p>
+      <div class="coded-grid" id="codedGrid"><!-- cards get built by script.js --></div>
+    </section>
+
+    <!-- ---------- THE GIFT ---------- -->
+    <section class="section gift" id="gift">
+      <div class="gift-petals" aria-hidden="true"></div>
+      <h2 class="gift-title" id="giftTitle">So... I made you something.</h2>
+      <p class="gift-line" id="giftLine1">Not because I had to.</p>
+      <p class="gift-line" id="giftLine2">Because you're important to me.</p>
+    </section>
+
+    <!-- ---------- FINAL ---------- -->
+    <section class="section final" id="final">
+      <h2 class="final-title">You're kind of the best, Galileo. <span class="wobble">💗</span></h2>
+      <p class="final-line">I'm sorry I didn't get to invite you.</p>
+      <p class="final-line">I hope this makes up for at least a tiny part of it.</p>
+      <p class="final-line small">Now go be brilliant at whatever's next on your list.</p>
+      <p class="final-signoff">— from your favorite person to argue with</p>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
